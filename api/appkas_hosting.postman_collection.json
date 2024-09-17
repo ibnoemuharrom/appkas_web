@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "93b30478-070f-44bd-aea0-bba68e60dd70",
+		"name": "appkas_hosting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19861557"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "list_category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_hosting}}/api/list_category.php",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"list_category.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"admintest\",\r\n    \"email\" : \"admin@test.com\",\r\n    \"password\" : \"admintest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_hosting}}/api/register.php",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"register.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\" : \"admin808088\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_hosting}}/api/login.php",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "create_transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\" : 2,\r\n    \"user_id\" : 1,\r\n    \"description\" : \"Belanja Kebutuhan Karyawan\",\r\n    \"amount\" : 100000,\r\n    \"type\" : \"OUT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_hosting}}/api/transaction.php",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"transaction.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_hosting}}/api/list_transaction.php?user_id=1",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"list_transaction.php"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								},
+								{
+									"key": "type",
+									"value": "in",
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2024-02-01",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2024-02-28",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit_transaction",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1,\r\n    \"category_id\" : 2,\r\n    \"user_id\" : 1,\r\n    \"description\" : \"Belanja Alat Tulis Kantor Februari\",\r\n    \"amount\" : 500000,\r\n    \"type\" : \"OUT\",\r\n    \"date\" : \"2024-01-08\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_hosting}}/api/edit_transaction.php",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"edit_transaction.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_hosting}}/api/delete_transaction.php?id=1",
+							"host": [
+								"{{url_hosting}}"
+							],
+							"path": [
+								"api",
+								"delete_transaction.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_hosting}}/api/index.php",
+					"host": [
+						"{{url_hosting}}"
+					],
+					"path": [
+						"api",
+						"index.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
