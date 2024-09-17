@@ -1,4 +1,6 @@
-# AppKas Berbasis Website
+# Appkas
+- Appkas berbasis website
 
-email : admin@test.com
-password : admin01
+### Login
+- email : admin@test.com
+- password : admin01
